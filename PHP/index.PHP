@@ -29,8 +29,8 @@
         <label for="carrera">Carrera:</label>
         <input type="text" id="carrera" name="carrera" required>
 
-        <label for="generacion">Generación:</label>
-        <input type="text" id="generacion" name="generacion" required>
+        <label for="generacion">Año de Ingreso:</label>
+        <input type="text" id="anio_ingreso" name="anio_ingreso" required>
 
         <button type="submit">Enviar</button>
     </form>
