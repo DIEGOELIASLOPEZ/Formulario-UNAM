@@ -17,10 +17,10 @@
             </div>
     
             <div class="botones-container">
-                <a href="inicio.html">
+                <a href="inicio.php">
                     <button type="button">Regresar al inicio</button>
                 </a>
-                <a href="tabla.html">
+                <a href="tabla.php">
                     <button type="button">Tabla</button>
                 </a>
             </div>

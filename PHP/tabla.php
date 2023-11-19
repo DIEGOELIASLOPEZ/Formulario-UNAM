@@ -14,10 +14,19 @@
     <title>Tabla de Alumnos UNAM</title>
 </head>
 <body>
-    <table class="table">
-        <caption>Lista de Alumnos UNAM</caption>
-        <div class = "tablaEstilos">
-        <thead class = "info">
+
+<?php
+include("conexion.php");
+
+$stm = $conexion->prepare("SELECT * FROM registro");
+$stm->execute();
+$registro = $stm->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<table class="table">
+    <caption>Lista de Alumnos UNAM</caption>
+    <div class="tablaEstilos">
+        <thead class="info">
             <tr>
                 <th scope="col">Número de Cuenta</th>
                 <th scope="col">Nombre</th>
@@ -30,26 +39,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">319079021</th>
-                <td>Diego Elias</td>
-                <td>Lopez</td>
-                <td>Martinez</td>
-                <td>FES Aragon</td>
-                <td>Ingenieria en Computacion</td>
-                <td>2022</td>
-                <td>
-                    <a href="editar" class = "btn btn-small btn-danger"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="eliminar"class = "btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-trash"></i></a>
-                </td>
-            </tr>
-
+            <?php foreach ($registro as $registro) { ?>
+                <tr>
+                    <th scope="row"><?php echo $registro['no_cuenta']; ?></th>
+                    <td><?php echo $registro['nombres']; ?></td>
+                    <td><?php echo $registro['apellido_paterno']; ?></td>
+                    <td><?php echo $registro['apellido_materno']; ?></td>
+                    <td><?php echo $registro['facultad']; ?></td>
+                    <td><?php echo $registro['carrera']; ?></td>
+                    <td><?php echo $registro['anio_ingreso']; ?></td>
+                    <td>
+                        <a href="editar" class="btn btn-small btn-danger"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="eliminar" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
-
-
-        </div>
-        
-
+</div>
 </body>
 </html>

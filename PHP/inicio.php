@@ -16,11 +16,11 @@
         </div>
     
         <div class="botones-container">
-            <a href="formulario.html">
+            <a href="formulariio.php">
                 <button type="button">Iniciar</button>
             </a>
 
-            <a href="tabla.html">
+            <a href="tabla.php">
                 <button type="button">tabla</button>
             </a>
         </div>

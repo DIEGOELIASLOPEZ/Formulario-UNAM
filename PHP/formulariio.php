@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="media/LOGO UNAM.png" logo UNAM> 
+    <link rel="shortcut icon" href="media/LOGO UNAM.png"logo ICO> 
     <link rel="stylesheet" href="media/estilos.css">
     <title>Formulario</title>
 </head>
@@ -29,8 +29,8 @@
         <label for="carrera">Carrera:</label>
         <input type="text" id="carrera" name="carrera" required>
 
-        <label for="generacion">Año de Ingreso:</label>
-        <input type="text" id="anio_ingreso" name="anio_ingreso" required>
+        <label for="generacion">Generación:</label>
+        <input type="text" id="generacion" name="generacion" required>
 
         <button type="submit">Enviar</button>
     </form>
