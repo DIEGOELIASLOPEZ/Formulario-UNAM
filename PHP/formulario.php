@@ -1,5 +1,4 @@
 <?php
-
 include("conexion.php");
 
 if ($_POST) {
@@ -23,7 +22,6 @@ if ($_POST) {
     $stm->bindParam(":generacion", $generacion);
 
     $stm->execute();
-
     
     header("location: enviado.php");
     exit(); 
@@ -40,7 +38,6 @@ if ($_POST) {
     <title>Formulario</title>
 </head>
 <body>
-
     <div class="contenedor">
         <form id="miFormulario" action="formulario.php" method="post">
             <label for="numeroCuenta">Número de Cuenta:</label>
@@ -66,9 +63,6 @@ if ($_POST) {
 
             <button type="submit">Enviar</button>
         </form>
-
-
     </div>
-
 </body>
 </html>

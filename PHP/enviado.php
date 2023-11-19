@@ -17,14 +17,12 @@
             </div>
     
             <div class="botones-container">
-                <a href="inicio.php">
-                    <button type="button">Regresar al inicio</button>
-                </a>
+ 
                 <a href="formulario.php">
-                    <button type="button">Llenar de nuevo</button>
+                <button type="button">Llenar de nuevo <i class="fas fa-paper-plane"></i></button>
                 </a>
                 <a href="tabla.php">
-                    <button type="button">Tabla</button>
+                <button type="button">Tabla<i class="fas fa-paper-plane"></i></button>
                 </a>
             </div>
         </div>

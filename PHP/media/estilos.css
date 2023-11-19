@@ -32,6 +32,16 @@ input {
     box-sizing: border-box;
 }
 
+.dato-editar {
+    display: flex;
+    align-items: center;
+}
+
+.dato-actual {
+    margin-right: 10px;
+    color: gray;
+}
+
 button {
     background-color: #1c3d6c;
     color: #fff;
@@ -44,7 +54,6 @@ button {
 button:hover {
     background-color: #0e1e34;
 }
-
 
 .botones-container {
     text-align: center;
