@@ -16,7 +16,7 @@
         </div>
     
         <div class="botones-container">
-            <a href="formulariio.php">
+            <a href="formulario.php">
                 <button type="button">Iniciar</button>
             </a>
 

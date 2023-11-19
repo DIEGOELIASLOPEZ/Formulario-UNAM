@@ -20,6 +20,9 @@
                 <a href="inicio.php">
                     <button type="button">Regresar al inicio</button>
                 </a>
+                <a href="formulario.php">
+                    <button type="button">Llenar de nuevo</button>
+                </a>
                 <a href="tabla.php">
                     <button type="button">Tabla</button>
                 </a>

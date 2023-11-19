@@ -49,8 +49,8 @@ $registro = $stm->fetchAll(PDO::FETCH_ASSOC);
                     <td><?php echo $registro['carrera']; ?></td>
                     <td><?php echo $registro['anio_ingreso']; ?></td>
                     <td>
-                        <a href="editar" class="btn btn-small btn-danger"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="eliminar" class="btn btn-small btn-warning"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                        <a href="editar" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="eliminar" class="btn btn-small btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             <?php } ?>
