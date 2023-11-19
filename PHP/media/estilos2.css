@@ -1,0 +1,18 @@
+/* tabla.css */
+
+/* Estilo para la cabecera de la tabla */
+table.table thead {
+    background-color: #1c3d6c;
+    color: #fff;
+}
+
+/* Estilo para el resto de la tabla */
+table.table tbody {
+    background-color: #f2f2f2; /* Gris claro */
+}
+
+/* Estilo para las celdas de la tabla */
+table.table th, table.table td {
+    text-align: center;
+    padding: 8px;
+}

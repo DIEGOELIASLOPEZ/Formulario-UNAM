@@ -10,7 +10,7 @@
 <body>
 
     <form>
-
+    
         <label for="nombre">Nombre(s):</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -33,6 +33,7 @@
         <input type="text" id="generacion" name="generacion" required>
 
         <button type="submit">Enviar</button>
+        
     </form>
 
 </body>
