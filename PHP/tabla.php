@@ -14,10 +14,7 @@ if(isset($_GET['id'])){
 // Consulta de registros
 $stm = $conexion->prepare("SELECT * FROM registro");
 $stm->execute();
-$registro = $stm->fetchAll(PDO::FETCH_ASSOC);
-?>
-<?php
-// Editar registro
+$registros = $stm->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +30,6 @@ $registro = $stm->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <table class="table">
-        
         <div class="tablaEstilos">
             <thead class="info">
                 <tr>
@@ -48,7 +44,7 @@ $registro = $stm->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($registro as $registro) { ?>
+                <?php foreach ($registros as $registro) { ?>
                     <tr>
                         <th scope="row"><?php echo $registro['no_cuenta']; ?></th>
                         <td><?php echo $registro['nombres']; ?></td>
@@ -58,7 +54,7 @@ $registro = $stm->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $registro['carrera']; ?></td>
                         <td><?php echo $registro['anio_ingreso']; ?></td>
                         <td>
-                            <a href="edicion.php?id = <?php echo $registro['id'];?>"  class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="edicion.php?id=<?php echo $registro['id'];?>"  class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="tabla.php?id=<?php echo $registro['id']; ?>" class="btn btn-small btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?');">
                                 <i class="fa-sharp fa-solid fa-trash"></i>
                             </a>
@@ -69,13 +65,8 @@ $registro = $stm->fetchAll(PDO::FETCH_ASSOC);
         </table>
     </div>
     <div class="botones-container">
-
-    
- 
-        <a href="formulario.php" class="btn btn-small btn-success"><i class="fa-solid fa-plus"></i>
+        <a href="formulario.php" class="btn btn-small btn-success"><i class="fa-solid fa-plus"></i></a>
         <a href="inicio.php" class="btn btn-small btn-secondary"><i class="fa-solid fa-home"></i></a>
-    
-
-        </div>
+    </div>
 </body>
 </html>

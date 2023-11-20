@@ -7,7 +7,7 @@
     <title>Formulario Enviado</title>
     <link rel="stylesheet" href="media/estilos.css">
 </head>
-<body>
+<body div>
 
     <form> 
         <div class="contenedor">
