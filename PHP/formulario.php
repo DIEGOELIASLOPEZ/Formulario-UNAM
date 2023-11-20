@@ -34,9 +34,7 @@
             <label for="generacion">Generación:</label>
             <input type="text" id="generacion" name="generacion" required>
 
-            <a href="inicio.php">
-                <button type="button">Regresar<i class="fas fa-paper-plane"></i></button>
-                </a>
+            <a href="inicio.php"><button type="button">Regresar<i class="fas fa-paper-plane"></i></button></a>
             <button type="submit">Enviar</button>
 
 
