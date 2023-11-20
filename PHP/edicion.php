@@ -4,7 +4,7 @@ include("conexion.php");
 // Inicializar variables
 $id = $numeroCuenta = $nombre = $apellido_paterno = $apellido_materno = $facultad = $carrera = $generacion = "";
 
-// Editar registro
+// Consulta y asignación de valores
 if (isset($_GET['id'])) {
     $editarId = $_GET['id'];
     $stm = $conexion->prepare("SELECT * FROM registro WHERE id = :id");
@@ -25,7 +25,35 @@ if (isset($_GET['id'])) {
     }
 }
 
+// Actualizar registro
+if ($_POST) {
+    $id = $_POST['id'];
+    $numeroCuenta = $_POST['numeroCuenta'];
+    $nombre = $_POST['nombre'];
+    $apellido_paterno = $_POST['apellido_paterno'];
+    $apellido_materno = $_POST['apellido_materno'];
+    $facultad = $_POST['facultad'];
+    $carrera = $_POST['carrera'];
+    $generacion = $_POST['generacion'];
 
+    $stm = $conexion->prepare("UPDATE registro SET no_cuenta = :numeroCuenta, nombres = :nombre, apellido_paterno = :apellido_paterno, apellido_materno = :apellido_materno, facultad = :facultad, carrera = :carrera, anio_ingreso = :generacion WHERE id = :id");
+
+    $stm->bindParam(":id", $id);
+    $stm->bindParam(":numeroCuenta", $numeroCuenta);
+    $stm->bindParam(":nombre", $nombre);
+    $stm->bindParam(":apellido_paterno", $apellido_paterno);
+    $stm->bindParam(":apellido_materno", $apellido_materno);
+    $stm->bindParam(":facultad", $facultad);
+    $stm->bindParam(":carrera", $carrera);
+    $stm->bindParam(":generacion", $generacion);
+
+    $stm->execute();
+
+    // Redireccionar a la página deseada después de la actualización
+    header("location: tabla.php");
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -65,7 +93,7 @@ if (isset($_GET['id'])) {
                 <input type="text" id="generacion" name="generacion" value="<?php echo $generacion; ?>" required>
 
                 <button type="button" onclick="window.location.href='tabla.php'">Cancelar</button>
-                <button type="submit">Actualizar</button>
+                <button type="submit">Guardar Cambios</button>
             </form>
         </div>
     </div>
