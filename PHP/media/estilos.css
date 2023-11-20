@@ -51,10 +51,14 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     background-color: #0e1e34;
 }
 
 .botones-container {
     text-align: center;
+}
+h3{
+    font-family: Arial, sans-serif; 
+    justify-content: center;
 }

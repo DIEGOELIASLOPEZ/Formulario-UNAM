@@ -29,17 +29,18 @@ $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
     <title>Tabla de Alumnos UNAM</title>
 </head>
 <body>
-    <table class="table">
-        <div class="tablaEstilos">
+    <div class="tablaEstilos">
+        <h3 class="text-center">Alumnos Registrados</h3>
+        <table class="table">
             <thead class="info">
                 <tr>
                     <th scope="col">Número de Cuenta</th>
-                    <th scope="col">Nombre</th>+
+                    <th scope="col">Nombre</th>
                     <th scope="col">Apellido Paterno</th>
                     <th scope="col">Apellido Materno</th>      
                     <th scope="col">Facultad</th>
-                    <th scope="col">Carrera</th>     
-                    <th scope="col">Año de Ingreso</th>
+                    <th scope="col">Carrera</th>
+                    <th scope="col">Generacion</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -54,7 +55,7 @@ $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $registro['carrera']; ?></td>
                         <td><?php echo $registro['anio_ingreso']; ?></td>
                         <td>
-                            <a href="edicion.php?id=<?php echo $registro['id'];?>"  class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="edicion.php?id=<?php echo $registro['id'];?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a href="tabla.php?id=<?php echo $registro['id']; ?>" class="btn btn-small btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este registro?');">
                                 <i class="fa-sharp fa-solid fa-trash"></i>
                             </a>
@@ -64,6 +65,7 @@ $registros = $stm->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+    
     <div class="botones-container">
         <a href="formulario.php" class="btn btn-small btn-success"><i class="fa-solid fa-plus"></i></a>
         <a href="inicio.php" class="btn btn-small btn-secondary"><i class="fa-solid fa-home"></i></a>
