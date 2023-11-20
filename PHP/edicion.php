@@ -62,6 +62,11 @@ if ($_POST) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="media/LOGO UNAM.png" type="image/x-icon">
     <link rel="stylesheet" href="media/estilos.css">
+    <style>
+        body {
+            background: url("media/bc2.png") center/cover no-repeat;
+        }
+    </style>
     <title>Edición de Alumno</title>
 </head>
 <body>
