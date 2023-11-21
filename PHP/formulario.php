@@ -1,3 +1,33 @@
+<?php
+include("conexion.php");
+
+if ($_POST) {
+    $numeroCuenta = (isset($_POST['numeroCuenta']) ? $_POST['numeroCuenta'] : "");
+    $nombre = (isset($_POST['nombre']) ? $_POST['nombre'] : "");
+    $apellido_paterno = (isset($_POST['apellido_paterno']) ? $_POST['apellido_paterno'] : "");
+    $apellido_materno = (isset($_POST['apellido_materno']) ? $_POST['apellido_materno'] : "");
+    $facultad = (isset($_POST['facultad']) ? $_POST['facultad'] : "");
+    $carrera = (isset($_POST['carrera']) ? $_POST['carrera'] : "");
+    $generacion = (isset($_POST['generacion']) ? $_POST['generacion'] : "");
+
+    $stm = $conexion->prepare("INSERT INTO registro(no_cuenta, nombres, apellido_paterno, apellido_materno, facultad, carrera, anio_ingreso)
+    VALUES (:numeroCuenta, :nombre, :apellido_paterno, :apellido_materno, :facultad, :carrera, :generacion)");
+
+    $stm->bindParam(":numeroCuenta", $numeroCuenta);
+    $stm->bindParam(":nombre", $nombre);
+    $stm->bindParam(":apellido_paterno", $apellido_paterno);
+    $stm->bindParam(":apellido_materno", $apellido_materno);
+    $stm->bindParam(":facultad", $facultad);
+    $stm->bindParam(":carrera", $carrera);
+    $stm->bindParam(":generacion", $generacion);
+
+    $stm->execute();
+    
+    header("location: enviado.php");
+    exit(); 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,9 +39,6 @@
 </head>
 <body>
     <div class="contenedor">
-
-
-
         <form id="miFormulario" action="formulario.php" method="post">
             <label for="numeroCuenta">Número de Cuenta:</label>
             <input type="text" id="numeroCuenta" name="numeroCuenta" required>
@@ -34,11 +61,7 @@
             <label for="generacion">Generación:</label>
             <input type="text" id="generacion" name="generacion" required>
 
-            <a href="inicio.php"><button type="button">Regresar<i class="fas fa-paper-plane"></i></button></a>
             <button type="submit">Enviar</button>
-
-
-        </div>
         </form>
     </div>
 </body>
